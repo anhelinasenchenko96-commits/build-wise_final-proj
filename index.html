@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                     </li>
 
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#portfolio">
+                        <a class="header__menu-link" href="#">
                             Portfolio
                         </a>
                     </li>
@@ -42,13 +42,13 @@
                     </li>
 
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#certifications">
+                        <a class="header__menu-link" href="#">
                             Certifications
                         </a>
                     </li>
 
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#contacts">
+                        <a class="header__menu-link" href="#">
                             Contacts
                         </a>
                     </li>
@@ -58,7 +58,8 @@
             <a class="button button--primary button--size-m header__phone" href="tel:+447755555764">
                 <span>(+44) 7755-555-764</span>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="button__icon" width="24" height="24" viewBox="0 0 24 24"
+                    aria-hidden="true" focusable="false" fill="none">
                     <path
                         d="M19 12C19 10.05 18.3208 8.39583 16.9625 7.0375C15.6042 5.67917 13.95 5 12 5V3C13.25 3 14.4208 3.2375 15.5125 3.7125C16.6042 4.1875 17.5542 4.82917 18.3625 5.6375C19.1708 6.44583 19.8125 7.39583 20.2875 8.4875C20.7625 9.57917 21 10.75 21 12H19ZM15 12C15 11.1667 14.7083 10.4583 14.125 9.875C13.5417 9.29167 12.8333 9 12 9V7C13.3833 7 14.5625 7.4875 15.5375 8.4625C16.5125 9.4375 17 10.6167 17 12H15ZM19.95 21C17.8667 21 15.8083 20.5458 13.775 19.6375C11.7417 18.7292 9.89167 17.4417 8.225 15.775C6.55833 14.1083 5.27083 12.2583 4.3625 10.225C3.45417 8.19167 3 6.13333 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.07917 8.725 3.2375C8.90833 3.39583 9.01667 3.58333 9.05 3.8L9.7 7.3C9.73333 7.56667 9.725 7.79167 9.675 7.975C9.625 8.15833 9.53333 8.31667 9.4 8.45L6.975 10.9C7.30833 11.5167 7.70417 12.1125 8.1625 12.6875C8.62083 13.2625 9.125 13.8167 9.675 14.35C10.1917 14.8667 10.7333 15.3458 11.3 15.7875C11.8667 16.2292 12.4667 16.6333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15.0167 20.625 15.1375 20.775 15.3125C20.925 15.4875 21 15.6833 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95V16.75L16.65 16.275L14.975 17.95Z"
                         fill="white" />
@@ -69,23 +70,495 @@
 
     <main>
         <section class="hero" aria-labelledby="hero-title">
-            <!-- главный заголовок, описание, кнопка, большое изображение -->
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <div class="hero__text-content">
+                        <h1 class="hero__title heading-h1" id="hero-title">
+                            Construction services
+                        </h1>
+
+                        <p class="hero__description text-body-xl">
+                            From residential renovations to large-scale commercial projects —
+                            we bring craftsmanship, reliability, and precision to every build.
+                        </p>
+                    </div>
+
+                    <a class="button button--primary button--size-l hero__button" href="#contacts">
+                        Request a free quote
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <section class="about" aria-labelledby="about-title">
-            <!-- текст о компании, кнопка, изображение -->
+        <section class="about" id="about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about__content">
+                    <div class="about__text-content">
+                        <div class="about__text-group">
+                            <h2 class="about__title heading-h2" id="about-title">
+                                About us
+                            </h2>
+
+                            <div class="about__description text-body-xl">
+                                <p>
+                                    At BuildWise, we believe every project is more than bricks and mortar —
+                                    it’s a vision brought to life. For over 20 years, we’ve been delivering
+                                    high-quality construction solutions for homeowners, businesses, and
+                                    developers.
+                                </p>
+
+                                <p>
+                                    Our team combines expert craftsmanship, innovative design, and
+                                    uncompromising safety standards to ensure every build is done right the
+                                    first time. From initial planning to the final walkthrough, we work
+                                    closely with our clients, keeping communication clear and expectations
+                                    aligned.
+                                </p>
+
+                                <p>
+                                    Our mission is simple: to build spaces that inspire, serve, and last for
+                                    generations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <a class="button button--primary button--size-l about__button" href="#about">
+                            More about us
+                        </a>
+                    </div>
+
+                    <div class="about__image-wrapper">
+                        <img class="about__image" src="img/photos/about-us-Image.jpg"
+                            alt="Modern white residential building with palm trees" width="828" height="600">
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="portfolio" aria-labelledby="portfolio-title">
-            <!-- заголовок, описание, карточки проектов, стрелки/пагинация -->
+        <section class="portfolio" id="portfolio" aria-labelledby="portfolio-title">
+            <div class="container">
+                <div class="portfolio__inner">
+                    <div class="portfolio__header">
+                        <h2 class="portfolio__title heading-h2" id="portfolio-title">
+                            Our portfolio
+                        </h2>
+
+                        <p class="portfolio__description text-body-l">
+                            From sleek modern homes to large-scale commercial complexes, our projects
+                            reflect the skill, precision, and dedication we bring to every build. Each
+                            one tells a story of careful planning, expert execution, and lasting quality.
+                        </p>
+                    </div>
+
+                    <div class="portfolio__body">
+                        <div class="portfolio__carousel" data-portfolio-carousel>
+                            <button class="icon-button icon-button--primary portfolio__arrow portfolio__arrow--prev"
+                                type="button" aria-label="Previous portfolio projects" data-portfolio-prev>
+                                <svg class="icon-button__icon" width="24" height="24" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <path d="M16.25 22L18.025 20.225L9.8 12L18.025 3.775L16.25 2L6.25 12L16.25 22Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </button>
+
+                            <div class="portfolio__viewport">
+                                <ul class="portfolio__track" data-portfolio-track>
+                                    <li class="portfolio__card portfolio__card--metro">
+                                        <div class="portfolio__card-content">
+                                            <h3 class="portfolio__card-title heading-h4">
+                                                Metro Office Hub
+                                            </h3>
+
+                                            <p class="portfolio__card-text text-body-l">
+                                                Complete office fit-out for a 10,000 sq ft corporate headquarters.
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <li class="portfolio__card portfolio__card--riverside">
+                                        <div class="portfolio__card-content">
+                                            <h3 class="portfolio__card-title heading-h4">
+                                                Riverside Heights
+                                            </h3>
+
+                                            <p class="portfolio__card-text text-body-l">
+                                                Luxury residential complex with panoramic views and eco-friendly
+                                                design.
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <li class="portfolio__card portfolio__card--hillside">
+                                        <div class="portfolio__card-content">
+                                            <h3 class="portfolio__card-title heading-h4">
+                                                Hillside Villa Renovation
+                                            </h3>
+
+                                            <p class="portfolio__card-text text-body-l">
+                                                Full interior and exterior remodel blending classic charm with
+                                                modern finishes.
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <li class="portfolio__card portfolio__card--maple">
+                                        <div class="portfolio__card-content">
+                                            <h3 class="portfolio__card-title heading-h4">
+                                                Maple Grove Townhomes
+                                            </h3>
+
+                                            <p class="portfolio__card-text text-body-l">
+                                                A stylish suburban development offering comfort, community, and
+                                                convenience.
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <li class="portfolio__card portfolio__card--residences">
+                                        <div class="portfolio__card-content">
+                                            <h3 class="portfolio__card-title heading-h4">
+                                                Riverside Heights Residences
+                                            </h3>
+
+                                            <p class="portfolio__card-text text-body-l">
+                                                A modern riverside apartment complex with energy-efficient design
+                                                and panoramic city views.
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <li class="portfolio__card portfolio__card--restoration">
+                                        <div class="portfolio__card-content">
+                                            <h3 class="portfolio__card-title heading-h4">
+                                                Hillside Villa Restoration
+                                            </h3>
+
+                                            <p class="portfolio__card-text text-body-l">
+                                                Complete restoration of a heritage property, blending classic
+                                                architecture with modern comforts.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <button class="icon-button icon-button--primary portfolio__arrow portfolio__arrow--next"
+                                type="button" aria-label="Next portfolio projects" data-portfolio-next>
+                                <svg class="icon-button__icon" width="24" height="24" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <path d="M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2L18.025 12L8.025 22Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="portfolio__progress" aria-live="polite">
+                            <div class="portfolio__pagination text-body-l">
+                                <span class="portfolio__pagination-current" data-portfolio-current>
+                                    01
+                                </span>
+                                <span class="portfolio__pagination-total">
+                                    /02
+                                </span>
+                            </div>
+
+                            <div class="portfolio__progress-bar" aria-hidden="true">
+                                <span class="portfolio__progress-indicator" data-portfolio-progress></span>
+                            </div>
+                        </div>
+
+                        <a class="button button--primary button--size-l portfolio__button" href="#portfolio">
+                            <span>View Full Portfolio</span>
+
+                            <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"
+                                focusable="false">
+                                <path d="M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2L18.025 12L8.025 22Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="certifications" aria-labelledby="certifications-title">
-            <!-- заголовок, описание, карточки сертификатов -->
+        <section class="certifications" id="certifications" aria-labelledby="certifications-title">
+            <div class="container">
+                <div class="certifications__inner">
+                    <div class="certifications__header">
+                        <h2 class="certifications__title heading-h2" id="certifications-title">
+                            Certifications &amp; credentials
+                        </h2>
+
+                        <p class="certifications__description text-body-l">
+                            We believe great construction starts with strong foundations — not just in
+                            buildings, but in professional standards. Our team holds industry-recognized
+                            certifications that ensure your project meets the highest levels of safety,
+                            quality, and compliance.
+                        </p>
+                    </div>
+
+                    <div class="certifications__grid">
+                        <article class="certification-card">
+                            <div class="certification-card__text">
+                                <h3 class="certification-card__title heading-h4">
+                                    Fully Licensed &amp; Insured
+                                </h3>
+
+                                <p class="certification-card__description text-body-l">
+                                    Commitment to quality management in every process.
+                                </p>
+
+                                <p class="certification-card__date text-body-l">
+                                    2025
+                                </p>
+                            </div>
+
+                            <span class="certification-card__tag text-body-l">
+                                Winner
+                            </span>
+
+                            <img class="certification-card__icon"
+                                src="img/icons/workspace_premium_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 2.svg" alt=""
+                                width="88" height="88" aria-hidden="true">
+                        </article>
+
+                        <article class="certification-card">
+                            <div class="certification-card__text">
+                                <h3 class="certification-card__title heading-h4">
+                                    ISO 9001:2015 Certified
+                                </h3>
+
+                                <p class="certification-card__description text-body-l">
+                                    Commitment to quality management in every process.
+                                </p>
+
+                                <p class="certification-card__date text-body-l">
+                                    2023, 2024, 2025
+                                </p>
+                            </div>
+
+                            <span class="certification-card__tag text-body-l">
+                                Winner
+                            </span>
+
+                            <img class="certification-card__icon"
+                                src="img/icons/workspace_premium_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 3.svg" alt=""
+                                width="88" height="88" aria-hidden="true">
+                        </article>
+
+                        <article class="certification-card">
+                            <div class="certification-card__text">
+                                <h3 class="certification-card__title heading-h4">
+                                    OSHA Safety Certified
+                                </h3>
+
+                                <p class="certification-card__description text-body-l">
+                                    Ensuring safe practices on every job site.
+                                </p>
+
+                                <p class="certification-card__date text-body-l">
+                                    2025
+                                </p>
+                            </div>
+
+                            <img class="certification-card__icon"
+                                src="img/icons/workspace_premium_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 4.svg" alt=""
+                                width="88" height="88" aria-hidden="true">
+                        </article>
+
+                        <article class="certification-card">
+                            <div class="certification-card__text">
+                                <h3 class="certification-card__title heading-h4">
+                                    LEED Accredited Professionals
+                                </h3>
+
+                                <p class="certification-card__description text-body-l">
+                                    Expertise in sustainable, eco-friendly building.
+                                </p>
+
+                                <p class="certification-card__date text-body-l">
+                                    2025
+                                </p>
+                            </div>
+
+                            <img class="certification-card__icon"
+                                src="img/icons/workspace_premium_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 4.svg" alt=""
+                                width="88" height="88" aria-hidden="true">
+                        </article>
+
+                        <article class="certification-card">
+                            <div class="certification-card__text">
+                                <h3 class="certification-card__title heading-h4">
+                                    Licensed General Contractor
+                                </h3>
+
+                                <p class="certification-card__description text-body-l">
+                                    Recognized by industry leaders.
+                                </p>
+
+                                <p class="certification-card__date text-body-l">
+                                    2025
+                                </p>
+                            </div>
+
+                            <img class="certification-card__icon"
+                                src="img/icons/workspace_premium_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 2.svg" alt=""
+                                width="88" height="88" aria-hidden="true">
+                        </article>
+
+                        <article class="certification-card">
+                            <div class="certification-card__text">
+                                <h3 class="certification-card__title heading-h4">
+                                    OSHA Safety Trained
+                                </h3>
+
+                                <p class="certification-card__description text-body-l">
+                                    Compliant with all local and national regulations
+                                </p>
+
+                                <p class="certification-card__date text-body-l">
+                                    2023, 2024, 2025
+                                </p>
+                            </div>
+
+                            <span class="certification-card__tag text-body-l">
+                                Winner
+                            </span>
+
+                            <img class="certification-card__icon"
+                                src="img/icons/workspace_premium_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 3.svg" alt=""
+                                width="88" height="88" aria-hidden="true">
+                        </article>
+                    </div>
+
+                    <a class="button button--primary button--size-l certifications__button" href="#certifications">
+                        <span>View All Certifications</span>
+
+                        <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"
+                            focusable="false">
+                            <path d="M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2L18.025 12L8.025 22Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </section>
 
         <section class="partners" aria-labelledby="partners-title">
-            <!-- заголовок, описание, большая карточка/слайдер партнёров -->
+            <div class="container">
+                <div class="partners__inner">
+                    <div class="partners__header">
+                        <h2 class="partners__title heading-h2" id="partners-title">
+                            Trusted partners
+                        </h2>
+
+                        <p class="partners__description text-body-l">
+                            We believe great construction happens through strong partnerships. Over the
+                            years, we’ve teamed up with leading suppliers, architects, and industry
+                            organizations to ensure every project gets the best materials, expertise,
+                            and technology available.
+                        </p>
+                    </div>
+
+                    <div class="partners__body">
+                        <div class="partners__carousel" data-partners-carousel>
+                            <button class="icon-button icon-button--primary partners__arrow partners__arrow--prev"
+                                type="button" aria-label="Previous partner project" data-partners-prev>
+                                <svg class="icon-button__icon" width="24" height="24" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <path d="M16.25 22L18.025 20.225L9.8 12L18.025 3.775L16.25 2L6.25 12L16.25 22Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </button>
+
+                            <div class="partners__viewport">
+                                <ul class="partners__track" data-partners-track>
+                                    <li class="partners__card partners__card--citypoint">
+                                        <div class="partners__card-content">
+                                            <h3 class="partners__card-title heading-h4">
+                                                CityPoint Retail Center
+                                            </h3>
+
+                                            <p class="partners__card-text text-body-l">
+                                                From sleek modern homes to large-scale commercial complexes, our
+                                                projects
+                                                reflect the skill, precision, and dedication we bring to every build.
+                                                Each
+                                                one tells a story of careful planning, expert execution, and lasting
+                                                quality.
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <li class="partners__card partners__card--skyline">
+                                        <div class="partners__card-content">
+                                            <h3 class="partners__card-title heading-h4">
+                                                Skyline Penthouse Remode
+                                            </h3>
+
+                                            <p class="partners__card-text text-body-l">
+                                                A stylish suburban development offering comfort, community, and
+                                                convenience.
+                                                Complete restoration of a heritage property, blending classic
+                                                architecture
+                                                with modern comforts.
+                                            </p>
+                                        </div>
+                                    </li>
+
+                                    <li class="partners__card partners__card--oakwood">
+                                        <div class="partners__card-content">
+                                            <h3 class="partners__card-title heading-h4">
+                                                Oakwood Family Estate
+                                            </h3>
+
+                                            <p class="partners__card-text text-body-l">
+                                                Luxury interior transformation with premium finishes and smart-home
+                                                integration. A modern riverside apartment complex with energy-efficient
+                                                design and panoramic city views.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <button class="icon-button icon-button--primary partners__arrow partners__arrow--next"
+                                type="button" aria-label="Next partner project" data-partners-next>
+                                <svg class="icon-button__icon" width="24" height="24" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <path d="M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2L18.025 12L8.025 22Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="partners__progress" aria-live="polite">
+                            <div class="partners__pagination text-body-l">
+                                <span class="partners__pagination-current" data-partners-current>
+                                    01
+                                </span>
+                                <span class="partners__pagination-total">
+                                    /03
+                                </span>
+                            </div>
+
+                            <div class="partners__progress-bar" aria-hidden="true">
+                                <span class="partners__progress-indicator" data-partners-progress></span>
+                            </div>
+                        </div>
+
+                        <a class="button button--primary button--size-l partners__button" href="#">
+                            <span>View Full Portfolio</span>
+
+                            <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"
+                                focusable="false">
+                                <path d="M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2L18.025 12L8.025 22Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="faq" aria-labelledby="faq-title">
