@@ -1250,7 +1250,7 @@ h6 {
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  row-gap: 60px;
+  gap: 60px;
 
   padding: 60px;
 
@@ -1259,7 +1259,8 @@ h6 {
 }
 
 .contacts__content {
-  width: 626px;
+  flex: 1 1 520px;
+  max-width: 626px;
 
   display: flex;
   flex-direction: column;
@@ -1307,6 +1308,7 @@ h6 {
 
 .contacts__field {
   flex: 1 1 auto;
+  min-width: 0;
 
   display: flex;
   flex-direction: column;
@@ -1385,9 +1387,10 @@ h6 {
 }
 
 .contacts__image {
-  width: 768px;
+  flex: 1 1 520px;
+  max-width: 768px;
   height: 530px;
-  min-width: 460px;
+  min-width: 0;
 
   border-radius: var(--radius-sm);
 
@@ -1412,13 +1415,12 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 64px;
+  gap: clamp(32px, 4vw, 64px);
 }
 
 .footer__brand {
-  width: 263px;
+  flex: 0 0 263px;
   min-height: 146px;
-  flex-shrink: 0;
 
   display: flex;
   flex-direction: column;
@@ -1482,12 +1484,12 @@ h6 {
 }
 
 .footer__nav {
-  width: 546px;
-  flex-shrink: 0;
+  flex: 1 1 360px;
+  max-width: 546px;
 
   display: flex;
   align-items: flex-start;
-  gap: 86px;
+  gap: clamp(40px, 5vw, 86px);
 }
 
 .footer__nav-column {
@@ -1533,9 +1535,9 @@ h6 {
 }
 
 .footer__contact {
-  width: 547px;
+  flex: 1 1 420px;
   max-width: 590px;
-  flex-shrink: 0;
+  min-width: 0;
 
   display: flex;
   flex-direction: column;
@@ -1544,7 +1546,7 @@ h6 {
 }
 
 .footer__contact-text {
-  min-width: 400px;
+  min-width: 0;
   width: 100%;
 
   display: flex;
@@ -1571,6 +1573,7 @@ h6 {
 
 .footer__field {
   flex: 1 1 auto;
+  min-width: 0;
 
   display: flex;
   flex-direction: column;
@@ -1631,11 +1634,50 @@ h6 {
 }
 
 .footer__submit {
+  flex-shrink: 0;
   min-width: max-content;
   height: 44px;
   padding: 12px 24px;
 }
 
+
+@media (max-width: 1200px) {
+  .contacts__image {
+    display: none;
+  }
+
+  .contacts__content {
+    width: 100%;
+    max-width: 626px;
+  }
+
+  .contacts__inner {
+    justify-content: flex-start;
+  }
+
+  .footer__content {
+    display: grid;
+    grid-template-columns: 263px 1fr;
+    gap: 48px 64px;
+  }
+
+  .footer__nav {
+    width: auto;
+    max-width: none;
+  }
+
+  .footer__contact {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    max-width: none;
+  }
+
+  .footer__contact-text,
+  .footer__form {
+    max-width: 590px;
+  }
+}
 
 
 /* ================================
