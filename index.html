@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js" defer></script>
     <script src="main.js" defer></script>
 </head>
 
-<body>
+<body class="page">
     <header class="header">
         <div class="container header__container">
             <a class="header__logo" href="#" aria-label="BuildWise home">
@@ -30,25 +31,25 @@
                     </li>
 
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#">
+                        <a class="header__menu-link" href="#portfolio">
                             Portfolio
                         </a>
                     </li>
 
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#price">
+                        <a class="header__menu-link" href="#">
                             Price
                         </a>
                     </li>
 
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#">
+                        <a class="header__menu-link" href="#certifications">
                             Certifications
                         </a>
                     </li>
 
                     <li class="header__menu-item">
-                        <a class="header__menu-link" href="#">
+                        <a class="header__menu-link" href="#contacts">
                             Contacts
                         </a>
                     </li>
@@ -62,9 +63,57 @@
                     aria-hidden="true" focusable="false" fill="none">
                     <path
                         d="M19 12C19 10.05 18.3208 8.39583 16.9625 7.0375C15.6042 5.67917 13.95 5 12 5V3C13.25 3 14.4208 3.2375 15.5125 3.7125C16.6042 4.1875 17.5542 4.82917 18.3625 5.6375C19.1708 6.44583 19.8125 7.39583 20.2875 8.4875C20.7625 9.57917 21 10.75 21 12H19ZM15 12C15 11.1667 14.7083 10.4583 14.125 9.875C13.5417 9.29167 12.8333 9 12 9V7C13.3833 7 14.5625 7.4875 15.5375 8.4625C16.5125 9.4375 17 10.6167 17 12H15ZM19.95 21C17.8667 21 15.8083 20.5458 13.775 19.6375C11.7417 18.7292 9.89167 17.4417 8.225 15.775C6.55833 14.1083 5.27083 12.2583 4.3625 10.225C3.45417 8.19167 3 6.13333 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.07917 8.725 3.2375C8.90833 3.39583 9.01667 3.58333 9.05 3.8L9.7 7.3C9.73333 7.56667 9.725 7.79167 9.675 7.975C9.625 8.15833 9.53333 8.31667 9.4 8.45L6.975 10.9C7.30833 11.5167 7.70417 12.1125 8.1625 12.6875C8.62083 13.2625 9.125 13.8167 9.675 14.35C10.1917 14.8667 10.7333 15.3458 11.3 15.7875C11.8667 16.2292 12.4667 16.6333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15.0167 20.625 15.1375 20.775 15.3125C20.925 15.4875 21 15.6833 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95V16.75L16.65 16.275L14.975 17.95Z"
-                        fill="white" />
+                        fill="currentColor" />
                 </svg>
             </a>
+
+            <button class="header__menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="mobile-menu" data-menu-open>
+                <svg class="header__menu-icon" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"
+                    focusable="false">
+                    <path
+                        d="M5.5 33V29.3333H38.5V33H5.5ZM5.5 23.8333V20.1667H38.5V23.8333H5.5ZM5.5 14.6667V11H38.5V14.6667H5.5Z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-mobile-menu>
+            <div class="mobile-menu__overlay" data-menu-close></div>
+
+            <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Main menu">
+                <div class="mobile-menu__header">
+                    <button class="mobile-menu__close" type="button" aria-label="Close menu" data-menu-close>
+                        <svg class="mobile-menu__close-icon" width="44" height="44" viewBox="0 0 44 44"
+                            aria-hidden="true" focusable="false">
+                            <path
+                                d="M11.7334 34.8332L9.16675 32.2665L19.4334 21.9998L9.16675 11.7332L11.7334 9.1665L22.0001 19.4332L32.2667 9.1665L34.8334 11.7332L24.5667 21.9998L34.8334 32.2665L32.2667 34.8332L22.0001 24.5665L11.7334 34.8332Z"
+                                fill="currentColor" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="mobile-menu__content">
+                    <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+                        <a class="mobile-menu__link" href="#">Main</a>
+                        <a class="mobile-menu__link" href="#portfolio">Portfolio</a>
+                        <a class="mobile-menu__link" href="#price">Price</a>
+                        <a class="mobile-menu__link" href="#certifications">Certifications</a>
+                        <a class="mobile-menu__link" href="#contacts">Contacts</a>
+                    </nav>
+
+                    <a class="button button--primary button--size-m mobile-menu__phone" href="tel:+447755555764">
+                        <span>(+44) 7755-555-764</span>
+
+                        <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"
+                            focusable="false">
+                            <path
+                                d="M19 12C19 10.05 18.3208 8.39583 16.9625 7.0375C15.6042 5.67917 13.95 5 12 5V3C13.25 3 14.4208 3.2375 15.5125 3.7125C16.6042 4.1875 17.5542 4.82917 18.3625 5.6375C19.1708 6.44583 19.8125 7.39583 20.2875 8.4875C20.7625 9.57917 21 10.75 21 12H19ZM15 12C15 11.1667 14.7083 10.4583 14.125 9.875C13.5417 9.29167 12.8333 9 12 9V7C13.3833 7 14.5625 7.4875 15.5375 8.4625C16.5125 9.4375 17 10.6167 17 12H15ZM19.95 21C17.8667 21 15.8083 20.5458 13.775 19.6375C11.7417 18.7292 9.89167 17.4417 8.225 15.775C6.55833 14.1083 5.27083 12.2583 4.3625 10.225C3.45417 8.19167 3 6.13333 3 4.05C3 3.75 3.1 3.5 3.3 3.3C3.5 3.1 3.75 3 4.05 3H8.1C8.33333 3 8.54167 3.07917 8.725 3.2375C8.90833 3.39583 9.01667 3.58333 9.05 3.8L9.7 7.3C9.73333 7.56667 9.725 7.79167 9.675 7.975C9.625 8.15833 9.53333 8.31667 9.4 8.45L6.975 10.9C7.30833 11.5167 7.70417 12.1125 8.1625 12.6875C8.62083 13.2625 9.125 13.8167 9.675 14.35C10.1917 14.8667 10.7333 15.3458 11.3 15.7875C11.8667 16.2292 12.4667 16.6333 13.1 17L15.45 14.65C15.6 14.5 15.7958 14.3875 16.0375 14.3125C16.2792 14.2375 16.5167 14.2167 16.75 14.25L20.2 14.95C20.4333 15.0167 20.625 15.1375 20.775 15.3125C20.925 15.4875 21 15.6833 21 15.9V19.95C21 20.25 20.9 20.5 20.7 20.7C20.5 20.9 20.25 21 19.95 21ZM6.025 9L7.675 7.35L7.25 5H5.025C5.10833 5.68333 5.225 6.35833 5.375 7.025C5.525 7.69167 5.74167 8.35 6.025 9ZM14.975 17.95C15.625 18.2333 16.2875 18.4583 16.9625 18.625C17.6375 18.7917 18.3167 18.9 19 18.95V16.75L16.65 16.275L14.975 17.95Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -547,7 +596,7 @@
                             </div>
                         </div>
 
-                        <a class="button button--primary button--size-l partners__button" href="#">
+                        <a class="button button--primary button--size-l partners__button" href="#portfolio">
                             <span>View Full Portfolio</span>
 
                             <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"
@@ -562,16 +611,377 @@
         </section>
 
         <section class="faq" aria-labelledby="faq-title">
-            <!-- FAQ-аккордеон -->
+            <div class="container">
+                <div class="faq__content">
+                    <h2 class="faq__title heading-h2" id="faq-title">
+                        Frequently asked questions
+                    </h2>
+
+                    <div class="faq__list" data-faq-list>
+                        <article class="faq__item">
+                            <h3 class="faq__question heading-h4">
+                                <button class="faq__button" type="button" aria-expanded="false"
+                                    aria-controls="faq-answer-1" data-faq-button>
+                                    <span class="faq__button-text">
+                                        What types of construction projects do you handle?
+                                    </span>
+
+                                    <span class="faq__icon-button" aria-hidden="true">
+                                        <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16"
+                                            focusable="false">
+                                            <path
+                                                d="M14.7584 5.25853L13.575 4.0752L8.09171 9.55853L2.60838 4.0752L1.42505 5.25853L8.09171 11.9252L14.7584 5.25853Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </h3>
+
+                            <div class="faq__answer" id="faq-answer-1" hidden>
+                                <p class="faq__answer-text text-body-l">
+                                    We handle a wide range of construction projects, including residential
+                                    builds, renovations, extensions, commercial spaces, interior fit-outs,
+                                    and structural improvements. Whether it’s a small upgrade or a
+                                    full-scale project, we tailor our approach to your needs.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="faq__item">
+                            <h3 class="faq__question heading-h4">
+                                <button class="faq__button" type="button" aria-expanded="false"
+                                    aria-controls="faq-answer-2" data-faq-button>
+                                    <span class="faq__button-text">
+                                        How long will my project take?
+                                    </span>
+
+                                    <span class="faq__icon-button" aria-hidden="true">
+                                        <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16"
+                                            focusable="false">
+                                            <path
+                                                d="M14.7584 5.25853L13.575 4.0752L8.09171 9.55853L2.60838 4.0752L1.42505 5.25853L8.09171 11.9252L14.7584 5.25853Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </h3>
+
+                            <div class="faq__answer" id="faq-answer-2" hidden>
+                                <p class="faq__answer-text text-body-l">
+                                    Project timelines vary depending on the scope and complexity. We’ll
+                                    provide a detailed schedule after our initial consultation and keep you
+                                    updated at every stage.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="faq__item">
+                            <h3 class="faq__question heading-h4">
+                                <button class="faq__button" type="button" aria-expanded="false"
+                                    aria-controls="faq-answer-3" data-faq-button>
+                                    <span class="faq__button-text">
+                                        Do you provide cost estimates before starting?
+                                    </span>
+
+                                    <span class="faq__icon-button" aria-hidden="true">
+                                        <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16"
+                                            focusable="false">
+                                            <path
+                                                d="M14.7584 5.25853L13.575 4.0752L8.09171 9.55853L2.60838 4.0752L1.42505 5.25853L8.09171 11.9252L14.7584 5.25853Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </h3>
+
+                            <div class="faq__answer" id="faq-answer-3" hidden>
+                                <p class="faq__answer-text text-body-l">
+                                    Yes. We provide a clear and detailed cost estimate before any work
+                                    begins, so you understand the expected budget, materials, labor, and
+                                    project requirements upfront.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="faq__item">
+                            <h3 class="faq__question heading-h4">
+                                <button class="faq__button" type="button" aria-expanded="false"
+                                    aria-controls="faq-answer-4" data-faq-button>
+                                    <span class="faq__button-text">
+                                        Are you licensed and insured?
+                                    </span>
+
+                                    <span class="faq__icon-button" aria-hidden="true">
+                                        <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16"
+                                            focusable="false">
+                                            <path
+                                                d="M14.7584 5.25853L13.575 4.0752L8.09171 9.55853L2.60838 4.0752L1.42505 5.25853L8.09171 11.9252L14.7584 5.25853Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </h3>
+
+                            <div class="faq__answer" id="faq-answer-4" hidden>
+                                <p class="faq__answer-text text-body-l">
+                                    Yes, we are fully licensed and insured. We follow all required building
+                                    regulations and safety standards to ensure your project is completed
+                                    professionally and responsibly.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="faq__item">
+                            <h3 class="faq__question heading-h4">
+                                <button class="faq__button" type="button" aria-expanded="false"
+                                    aria-controls="faq-answer-5" data-faq-button>
+                                    <span class="faq__button-text">
+                                        Can you work with my own architect or designer?
+                                    </span>
+
+                                    <span class="faq__icon-button" aria-hidden="true">
+                                        <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16"
+                                            focusable="false">
+                                            <path
+                                                d="M14.7584 5.25853L13.575 4.0752L8.09171 9.55853L2.60838 4.0752L1.42505 5.25853L8.09171 11.9252L14.7584 5.25853Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </h3>
+
+                            <div class="faq__answer" id="faq-answer-5" hidden>
+                                <p class="faq__answer-text text-body-l">
+                                    Absolutely. We’re happy to collaborate with your architect, designer, or
+                                    any other specialists involved in the project to ensure a smooth and
+                                    coordinated process.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="faq__item">
+                            <h3 class="faq__question heading-h4">
+                                <button class="faq__button" type="button" aria-expanded="false"
+                                    aria-controls="faq-answer-6" data-faq-button>
+                                    <span class="faq__button-text">
+                                        Do you offer eco-friendly building options?
+                                    </span>
+
+                                    <span class="faq__icon-button" aria-hidden="true">
+                                        <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16"
+                                            focusable="false">
+                                            <path
+                                                d="M14.7584 5.25853L13.575 4.0752L8.09171 9.55853L2.60838 4.0752L1.42505 5.25853L8.09171 11.9252L14.7584 5.25853Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </h3>
+
+                            <div class="faq__answer" id="faq-answer-6" hidden>
+                                <p class="faq__answer-text text-body-l">
+                                    Yes. We can recommend sustainable materials, energy-efficient solutions,
+                                    and environmentally conscious building methods to help reduce waste and
+                                    improve long-term efficiency.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="contact" aria-labelledby="contact-title">
-            <!-- CTA-блок, текст, форма, изображение -->
+        <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+            <div class="container">
+                <div class="contacts__inner">
+                    <div class="contacts__content">
+                        <div class="contacts__text-content">
+                            <h2 class="contacts__title heading-h2" id="contacts-title">
+                                Start your project today!
+                            </h2>
+
+                            <div class="contacts__description text-body-l">
+                                <p>
+                                    Tell us about your construction needs, and our team will get back to you
+                                    with a detailed proposal.
+                                </p>
+
+                                <p>
+                                    Once we receive your application, one of our project managers will
+                                    contact you within 24 hours to discuss your goals, budget, and next
+                                    steps.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contacts__form-block">
+                            <form class="contacts__form" novalidate data-phone-form>
+                                <div class="contacts__field">
+                                    <label class="visually-hidden" for="contacts-phone">
+                                        Phone Number
+                                    </label>
+
+                                    <input class="contacts__input" id="contacts-phone" name="phone" type="tel"
+                                        placeholder="Phone Number" autocomplete="tel" inputmode="tel" data-phone-input>
+
+                                    <p class="form-error text-body-m" id="contacts-phone-error" data-phone-error hidden>
+                                        <svg class="form-error__icon" width="16" height="16" viewBox="0 0 16 16"
+                                            aria-hidden="true" focusable="false">
+                                            <path
+                                                d="M8.00016 14.6666C4.31816 14.6666 1.3335 11.6819 1.3335 7.99992C1.3335 4.31792 4.31816 1.33325 8.00016 1.33325C11.6822 1.33325 14.6668 4.31792 14.6668 7.99992C14.6668 11.6819 11.6822 14.6666 8.00016 14.6666ZM8.00016 13.3333C9.41465 13.3333 10.7712 12.7713 11.7714 11.7712C12.7716 10.771 13.3335 9.41441 13.3335 7.99992C13.3335 6.58543 12.7716 5.22888 11.7714 4.22868C10.7712 3.22849 9.41465 2.66659 8.00016 2.66659C6.58567 2.66659 5.22912 3.22849 4.22893 4.22868C3.22873 5.22888 2.66683 6.58543 2.66683 7.99992C2.66683 9.41441 3.22873 10.771 4.22893 11.7712C5.22912 12.7713 6.58567 13.3333 8.00016 13.3333ZM7.3335 9.99992H8.66683V11.3333H7.3335V9.99992ZM7.3335 4.66659H8.66683V8.66658H7.3335V4.66659Z"
+                                                fill="currentColor" />
+                                        </svg>
+
+                                        <span data-phone-error-text></span>
+                                    </p>
+                                </div>
+
+                                <button class="button button--secondary button--size-l contacts__submit" type="submit">
+                                    Submit
+                                </button>
+                            </form>
+
+                            <p class="contacts__privacy text-body-s">
+                                *By clicking on the button, you agree to the privacy policy and give
+                                consent to the processing of your personal data.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contacts__image" aria-hidden="true"></div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
-        <!-- копирайт, меню, мини-форма/CTA -->
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__brand-top">
+                        <a class="footer__logo" href="#" aria-label="BuildWise home">
+                            <img class="footer__logo-img" src="img/icons/Logo.svg" alt="BuildWise" width="152"
+                                height="24">
+                        </a>
+
+                        <p class="footer__copyright text-body-m">
+                            © 2023 Company
+                        </p>
+                    </div>
+
+                    <ul class="footer__social-list" aria-label="Social media links">
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="#" aria-label="Instagram">
+                                <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M22.6288 7.61031C22.6168 6.71055 22.4484 5.81973 22.131 4.9777C21.8558 4.26746 21.4355 3.62243 20.8969 3.08383C20.3583 2.54523 19.7133 2.1249 19.003 1.8497C18.1718 1.53768 17.2937 1.36897 16.4061 1.35074C15.2632 1.29966 14.9009 1.2854 11.9998 1.2854C9.09867 1.2854 8.72682 1.2854 7.59228 1.35074C6.70504 1.3691 5.82733 1.53781 4.9965 1.8497C4.28615 2.12471 3.64102 2.54497 3.1024 3.0836C2.56377 3.62222 2.14351 4.26735 1.8685 4.9777C1.55585 5.80827 1.38751 6.68618 1.37073 7.57348C1.31964 8.71753 1.3042 9.07987 1.3042 11.981C1.3042 14.8821 1.3042 15.2527 1.37073 16.3884C1.38855 17.2771 1.55606 18.1538 1.8685 18.9866C2.14397 19.6967 2.56454 20.3416 3.10335 20.88C3.64215 21.4184 4.28734 21.8385 4.99769 22.1134C5.82624 22.438 6.7041 22.6188 7.59347 22.648C8.73752 22.6991 9.09986 22.7145 12.001 22.7145C14.902 22.7145 15.2739 22.7145 16.4084 22.648C17.296 22.6305 18.1742 22.4622 19.0054 22.1502C19.7155 21.8747 20.3603 21.4543 20.8989 20.9157C21.4374 20.3772 21.8579 19.7323 22.1334 19.0222C22.4458 18.1906 22.6134 17.3139 22.6312 16.4241C22.6823 15.2812 22.6977 14.9189 22.6977 12.0166C22.6953 9.11551 22.6953 8.74723 22.6288 7.61031ZM11.9926 17.4671C8.95848 17.4671 6.50051 15.0092 6.50051 11.975C6.50051 8.94087 8.95848 6.4829 11.9926 6.4829C13.4492 6.4829 14.8462 7.06153 15.8762 8.09151C16.9061 9.12148 17.4848 10.5184 17.4848 11.975C17.4848 13.4316 16.9061 14.8286 15.8762 15.8585C14.8462 16.8885 13.4492 17.4671 11.9926 17.4671ZM17.7034 7.56042C17.5351 7.56057 17.3685 7.52755 17.2131 7.46325C17.0576 7.39895 16.9164 7.30462 16.7974 7.18567C16.6785 7.06672 16.5842 6.92547 16.5199 6.77003C16.4555 6.61458 16.4225 6.44798 16.4227 6.27975C16.4227 6.11165 16.4558 5.9452 16.5201 5.78989C16.5845 5.63459 16.6787 5.49347 16.7976 5.37461C16.9165 5.25574 17.0576 5.16145 17.2129 5.09712C17.3682 5.03279 17.5347 4.99968 17.7028 4.99968C17.8709 4.99968 18.0373 5.03279 18.1926 5.09712C18.3479 5.16145 18.489 5.25574 18.6079 5.37461C18.7268 5.49347 18.8211 5.63459 18.8854 5.78989C18.9497 5.9452 18.9828 6.11165 18.9828 6.27975C18.9828 6.9878 18.4102 7.56042 17.7034 7.56042Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M11.9926 15.5426C13.9629 15.5426 15.5602 13.9453 15.5602 11.975C15.5602 10.0047 13.9629 8.40746 11.9926 8.40746C10.0223 8.40746 8.42507 10.0047 8.42507 11.975C8.42507 13.9453 10.0223 15.5426 11.9926 15.5426Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="#" aria-label="Telegram">
+                                <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M12 0C5.376 0 0 5.376 0 12C0 18.624 5.376 24 12 24C18.624 24 24 18.624 24 12C24 5.376 18.624 0 12 0ZM17.568 8.16C17.388 10.056 16.608 14.664 16.212 16.788C16.044 17.688 15.708 17.988 15.396 18.024C14.7 18.084 14.172 17.568 13.5 17.124C12.444 16.428 11.844 15.996 10.824 15.324C9.636 14.544 10.404 14.112 11.088 13.416C11.268 13.236 14.34 10.44 14.4 10.188C14.4083 10.1498 14.4072 10.1102 14.3968 10.0726C14.3863 10.0349 14.3668 10.0004 14.34 9.972C14.268 9.912 14.172 9.936 14.088 9.948C13.98 9.972 12.3 11.088 9.024 13.296C8.544 13.62 8.112 13.788 7.728 13.776C7.296 13.764 6.48 13.536 5.868 13.332C5.112 13.092 4.524 12.96 4.572 12.54C4.596 12.324 4.896 12.108 5.46 11.88C8.964 10.356 11.292 9.348 12.456 8.868C15.792 7.476 16.476 7.236 16.932 7.236C17.028 7.236 17.256 7.26 17.4 7.38C17.52 7.476 17.556 7.608 17.568 7.704C17.556 7.776 17.58 7.992 17.568 8.16Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="#" aria-label="Twitter">
+                                <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M21.1008 7.24442C21.1163 7.45232 21.1163 7.65903 21.1163 7.86574C21.1163 14.1918 16.3013 21.4814 7.5018 21.4814C4.79078 21.4814 2.27222 20.6961 0.152832 19.3323C0.537744 19.3763 0.9084 19.3917 1.30876 19.3917C3.46259 19.3969 5.55543 18.6767 7.24994 17.3472C6.25134 17.3291 5.2833 16.9996 4.481 16.4048C3.6787 15.8099 3.08218 14.9794 2.77475 14.0291C3.07056 14.073 3.36756 14.1027 3.67882 14.1027C4.10768 14.1027 4.53893 14.0433 4.93928 13.94C3.85554 13.7212 2.88104 13.1337 2.18148 12.2776C1.48192 11.4215 1.10049 10.3494 1.10204 9.24382V9.18442C1.74 9.53964 2.48012 9.76179 3.2642 9.79149C2.60735 9.355 2.06874 8.76271 1.69645 8.06745C1.32415 7.3722 1.12974 6.5956 1.13056 5.80694C1.13056 4.91832 1.36697 4.10335 1.78158 3.39292C2.984 4.87201 4.48369 6.08203 6.18352 6.94464C7.88335 7.80724 9.74541 8.30318 11.6491 8.40034C11.5755 8.04394 11.5303 7.67448 11.5303 7.30382C11.53 6.67532 11.6536 6.05292 11.8939 5.47221C12.1343 4.89149 12.4868 4.36385 12.9312 3.91943C13.3756 3.47502 13.9032 3.12255 14.484 2.88218C15.0647 2.6418 15.6871 2.51824 16.3156 2.51856C17.6937 2.51856 18.9375 3.09592 19.8119 4.02969C20.8832 3.82252 21.9105 3.43144 22.8484 2.87377C22.4913 3.97958 21.7433 4.91725 20.7444 5.51113C21.6946 5.40276 22.6232 5.15289 23.4994 4.76982C22.845 5.7239 22.034 6.56054 21.1008 7.24442Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="footer__social-item">
+                            <a class="footer__social-link" href="#" aria-label="Facebook">
+                                <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24"
+                                    aria-hidden="true" focusable="false">
+                                    <path
+                                        d="M12.0009 0.133545C5.44075 0.133545 0.12207 5.45222 0.12207 12.0124C0.12207 17.9405 4.4654 22.854 10.1452 23.7486V15.4469H7.12771V12.0124H10.1452V9.39519C10.1452 6.41569 11.9189 4.77269 14.6311 4.77269C15.9308 4.77269 17.2922 5.00435 17.2922 5.00435V7.92564H15.7906C14.3175 7.92564 13.8565 8.84277 13.8565 9.78248V12.01H17.1485L16.6222 15.4445H13.8565V23.7462C19.5364 22.8564 23.8797 17.9417 23.8797 12.0124C23.8797 5.45222 18.561 0.133545 12.0009 0.133545Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <nav class="footer__nav" aria-label="Footer navigation">
+                    <ul class="footer__nav-column">
+                        <li><a class="footer__nav-link" href="#">Main</a></li>
+                        <li><a class="footer__nav-link" href="#portfolio">Portfolio</a></li>
+                    </ul>
+
+                    <ul class="footer__nav-column">
+                        <li><a class="footer__nav-link" href="#">Price</a></li>
+                        <li><a class="footer__nav-link" href="#certifications">Certifications</a></li>
+                    </ul>
+
+                    <ul class="footer__nav-column">
+                        <li><a class="footer__nav-link" href="#contacts">Contacts</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer__contact">
+                    <div class="footer__contact-text">
+                        <h2 class="footer__contact-title heading-h4">
+                            Tell us about your construction needs
+                        </h2>
+
+                        <p class="footer__contact-description text-body-m">
+                            Once we receive your application, one of our project managers will contact
+                            you within 24 hours to discuss your goals, budget, and next steps.
+                        </p>
+                    </div>
+
+                    <form class="footer__form" novalidate data-phone-form>
+                        <div class="footer__field">
+                            <label class="visually-hidden" for="footer-phone">
+                                Phone Number
+                            </label>
+
+                            <input class="footer__input" id="footer-phone" name="phone" type="tel"
+                                placeholder="Phone Number" autocomplete="tel" inputmode="tel" data-phone-input>
+
+                            <p class="form-error text-body-m" id="footer-phone-error" data-phone-error hidden>
+                                <svg class="form-error__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <g clip-path="url(#clip0_4100_486)">
+                                        <path
+                                            d="M8.00016 14.6666C4.31816 14.6666 1.3335 11.6819 1.3335 7.99992C1.3335 4.31792 4.31816 1.33325 8.00016 1.33325C11.6822 1.33325 14.6668 4.31792 14.6668 7.99992C14.6668 11.6819 11.6822 14.6666 8.00016 14.6666ZM8.00016 13.3333C9.41465 13.3333 10.7712 12.7713 11.7714 11.7712C12.7716 10.771 13.3335 9.41441 13.3335 7.99992C13.3335 6.58543 12.7716 5.22888 11.7714 4.22868C10.7712 3.22849 9.41465 2.66659 8.00016 2.66659C6.58567 2.66659 5.22912 3.22849 4.22893 4.22868C3.22873 5.22888 2.66683 6.58543 2.66683 7.99992C2.66683 9.41441 3.22873 10.771 4.22893 11.7712C5.22912 12.7713 6.58567 13.3333 8.00016 13.3333V13.3333ZM7.3335 9.99992H8.66683V11.3333H7.3335V9.99992ZM7.3335 4.66659H8.66683V8.66658H7.3335V4.66659Z"
+                                            fill="currentColor" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_4100_486">
+                                            <rect width="16" height="16" fill="currentColor" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                <span data-phone-error-text></span>
+                            </p>
+                        </div>
+
+                        <button class="button button--primary footer__submit" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 
