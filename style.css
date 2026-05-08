@@ -2250,14 +2250,15 @@ h6 {
   /* Hero */
 
   .hero {
-    min-height: min(100svh, 760px);
+    min-height: 100svh;
 
-    background-size: auto 100%;
-    background-position: right top;
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
   }
 
   .hero__container {
-    min-height: min(100svh, 760px);
+    min-height: 100svh;
 
     display: flex;
     align-items: center;
