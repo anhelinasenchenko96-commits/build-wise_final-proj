@@ -41,22 +41,22 @@ build-wise_final-proj/
     └── photos/
 ```
 
-How to run the project
+## How to run the project
 
 Open index.html in a browser.
 
 Or use a local development server, for example the Live Server extension in Visual Studio Code.
 
-Responsive design
+## Responsive design
 
 The layout is adapted for:
 
-Desktop screens
-Tablet screens up to 1024px
-Mobile screens up to 768px
-JavaScript functionality
+- Desktop screens
+- Tablet screens up to 1024px
+- Mobile screens up to 768px
+- JavaScript functionality
 
-The project includes:
+## The project includes:
 
 Mobile navigation menu
 Portfolio carousel
@@ -69,6 +69,6 @@ Completed desktop layout.
 Tablet and mobile adaptation added.
 Final testing and small improvements may still be made.
 
-Author
+## Author
 
 Created as a front-end learning project.
